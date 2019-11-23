@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EquantaBook.Db.Migrations
 {
     [DbContext(typeof(BookContext))]
-    [Migration("20191123154222_BookMigration")]
+    [Migration("20191123161507_BookMigration")]
     partial class BookMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,23 @@ namespace EquantaBook.Db.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Василий Светлый"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Игорь Темный"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Артем Никудышнов"
+                        });
                 });
 
             modelBuilder.Entity("EquantaBook.Db.Tabels.AuthorBooks", b =>
@@ -49,6 +66,38 @@ namespace EquantaBook.Db.Migrations
                     b.HasIndex("BookId");
 
                     b.ToTable("AuthorBooks");
+
+                    b.HasData(
+                        new
+                        {
+                            AuthorId = 1,
+                            BookId = 1
+                        },
+                        new
+                        {
+                            AuthorId = 1,
+                            BookId = 2
+                        },
+                        new
+                        {
+                            AuthorId = 2,
+                            BookId = 3
+                        },
+                        new
+                        {
+                            AuthorId = 2,
+                            BookId = 4
+                        },
+                        new
+                        {
+                            AuthorId = 3,
+                            BookId = 2
+                        },
+                        new
+                        {
+                            AuthorId = 3,
+                            BookId = 4
+                        });
                 });
 
             modelBuilder.Entity("EquantaBook.Db.Tabels.Book", b =>
@@ -75,6 +124,40 @@ namespace EquantaBook.Db.Migrations
                     b.HasIndex("PublisherId");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Властелин света",
+                            PageCount = 23,
+                            PublisherId = 1,
+                            Year = 2019
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Красный рассвет",
+                            PageCount = 26,
+                            PublisherId = 1,
+                            Year = 2019
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Властелин тьмы",
+                            PageCount = 28,
+                            PublisherId = 2,
+                            Year = 2019
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Красный закат",
+                            PageCount = 280,
+                            PublisherId = 2,
+                            Year = 2019
+                        });
                 });
 
             modelBuilder.Entity("EquantaBook.Db.Tabels.Publisher", b =>
@@ -93,6 +176,18 @@ namespace EquantaBook.Db.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Publishers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Издательство Рассвет"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Издательство Закат"
+                        });
                 });
 
             modelBuilder.Entity("EquantaBook.Db.Tabels.AuthorBooks", b =>

@@ -79,6 +79,49 @@ namespace EquantaBook.Db.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Authors",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Василий Светлый" },
+                    { 2, "Игорь Темный" },
+                    { 3, "Артем Никудышнов" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Publishers",
+                columns: new[] { "Id", "Address", "Name" },
+                values: new object[,]
+                {
+                    { 1, null, "Издательство Рассвет" },
+                    { 2, null, "Издательство Закат" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "Name", "PageCount", "PublisherId", "Year" },
+                values: new object[,]
+                {
+                    { 1, "Властелин света", 23, 1, 2019 },
+                    { 2, "Красный рассвет", 26, 1, 2019 },
+                    { 3, "Властелин тьмы", 28, 2, 2019 },
+                    { 4, "Красный закат", 280, 2, 2019 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AuthorBooks",
+                columns: new[] { "AuthorId", "BookId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 1, 2 },
+                    { 3, 2 },
+                    { 2, 3 },
+                    { 2, 4 },
+                    { 3, 4 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AuthorBooks_BookId",
                 table: "AuthorBooks",

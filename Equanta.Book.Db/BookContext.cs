@@ -34,6 +34,44 @@ namespace EquantaBook.Db
                 .HasOne(x => x.Author)
                 .WithMany(e => e.Books)
                 .HasForeignKey(x => x.AuthorId);
+
+
+
+            modelBuilder.Entity<Publisher>().HasData(
+                  new Publisher[]
+                  {
+                        new Publisher { Id=1, Name="Издательство Рассвет"},
+                        new Publisher { Id=2, Name="Издательство Закат"}
+                  });
+
+            modelBuilder.Entity<Book>().HasData(
+                  new Book[]
+                  {
+                        new Book { Id=1, Name="Властелин света", PageCount=23, PublisherId = 1, Year = 2019},
+                        new Book { Id=2, Name="Красный рассвет", PageCount=26,  PublisherId = 1, Year = 2019},
+                        new Book { Id=3, Name="Властелин тьмы", PageCount=28,  PublisherId = 2, Year = 2019},
+                        new Book { Id=4, Name="Красный закат", PageCount=280,  PublisherId = 2, Year = 2019}
+                  });
+
+            modelBuilder.Entity<Author>().HasData(
+                new Author[]
+                {
+                        new Author { Id=1, Name="Василий Светлый"},
+                        new Author { Id=2, Name="Игорь Темный"},
+                        new Author { Id=3, Name="Артем Никудышнов"},
+                });
+
+            modelBuilder.Entity<AuthorBooks>().HasData(
+               new AuthorBooks[]
+               {
+                        new AuthorBooks { AuthorId = 1, BookId = 1},
+                        new AuthorBooks { AuthorId = 1, BookId = 2},
+                        new AuthorBooks { AuthorId = 2, BookId = 3},
+                        new AuthorBooks { AuthorId = 2, BookId = 4},
+                        new AuthorBooks {AuthorId = 3, BookId = 2},
+                        new AuthorBooks {AuthorId = 3, BookId = 4},
+               });
+
         }
 
     }
