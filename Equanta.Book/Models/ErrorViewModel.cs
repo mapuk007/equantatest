@@ -1,6 +1,6 @@
 using System;
 
-namespace Equanta.Book.Models
+namespace EquantaBook.Models
 {
     public class ErrorViewModel
     {

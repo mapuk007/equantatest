@@ -5,16 +5,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
-COPY ["Equanta.Book/Equanta.Book.csproj", "Equanta.Book/"]
-RUN dotnet restore "Equanta.Book/Equanta.Book.csproj"
+COPY ["EquantaBook/EquantaBook.csproj", "EquantaBook/"]
+RUN dotnet restore "EquantaBook/EquantaBook.csproj"
 COPY . .
-WORKDIR "/src/Equanta.Book"
-RUN dotnet build "Equanta.Book.csproj" -c Release -o /app/build
+WORKDIR "/src/EquantaBook"
+RUN dotnet build "EquantaBook.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Equanta.Book.csproj" -c Release -o /app/publish
+RUN dotnet publish "EquantaBook.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Equanta.Book.dll"]
+ENTRYPOINT ["dotnet", "EquantaBook.dll"]

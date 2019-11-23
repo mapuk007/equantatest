@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Equanta.Book": {
+    "EquantaBook": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

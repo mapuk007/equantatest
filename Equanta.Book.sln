@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equanta.Book", "Equanta.Book\Equanta.Book.csproj", "{28C9D3D3-76FF-4EEC-A178-CB2DB5A1AD40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquantaBook", "Equanta.Book\EquantaBook.csproj", "{28C9D3D3-76FF-4EEC-A178-CB2DB5A1AD40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquantaBook.Db", "Equanta.Book.Db\EquantaBook.Db.csproj", "{535AB0CC-F2BA-4CAC-AA4A-7F96D755A0D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{28C9D3D3-76FF-4EEC-A178-CB2DB5A1AD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28C9D3D3-76FF-4EEC-A178-CB2DB5A1AD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28C9D3D3-76FF-4EEC-A178-CB2DB5A1AD40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{535AB0CC-F2BA-4CAC-AA4A-7F96D755A0D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535AB0CC-F2BA-4CAC-AA4A-7F96D755A0D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535AB0CC-F2BA-4CAC-AA4A-7F96D755A0D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535AB0CC-F2BA-4CAC-AA4A-7F96D755A0D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
